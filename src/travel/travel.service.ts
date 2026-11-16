@@ -5,7 +5,7 @@ import { UpdateTravelDto } from './dto/update-travel.dto';
 @Injectable()
 export class TravelService {
   create(createTravelDto: CreateTravelDto) {
-    return 'This action adds a new travel';
+    return 'Planifier un nouveau voyage ici';
   }
 
   findAll() {
