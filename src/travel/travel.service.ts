@@ -9,11 +9,13 @@ export class TravelService {
   }
 
   findAll() {
-    return `This action returns all travel`;
+    const trips = this.trips.map((t) => ({ id: t.id, name: t.name, price: t.price }));
+    return trips;
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} travel`;
+    const trip = this.trips.find((t) => t.id === id);
+    return trip || `Travel with ID #${id} not found`;
   }
 
   update(id: number, updateTravelDto: UpdateTravelDto) {
@@ -23,4 +25,8 @@ export class TravelService {
   remove(id: number) {
     return `This action removes a #${id} travel`;
   }
+  private trips = [
+    { id: 1, name: 'To China', price: 9000 },
+    { id: 2, name: 'To Morocco', price: 4000 },
+  ];
 }
